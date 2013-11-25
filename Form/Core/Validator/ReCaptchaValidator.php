@@ -39,7 +39,7 @@ class ReCaptchaValidator implements FormValidatorInterface
         if (true === empty($privateKey)) {
             throw new FormException('The child node "private_key" at path "genemu_form.recaptcha" must be configured.');
         }
-        
+
         $this->request = $request;
         $this->privateKey = $privateKey;
 
@@ -59,7 +59,7 @@ class ReCaptchaValidator implements FormValidatorInterface
     public function validate(FormInterface $form)
     {
         $error = '';
-        $request = $this->request->request;
+        $request = $this->request->get('request');
         $server = $this->request->server;
 
         $datas = array(
