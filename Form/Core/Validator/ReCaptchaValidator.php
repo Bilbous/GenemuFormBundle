@@ -74,7 +74,7 @@ class ReCaptchaValidator implements EventSubscriberInterface
         $form = $event->getForm();
 
         $error = '';
-        $request = $this->request->request;
+        $request = $this->request->get('request');
 
         $datas = array(
             'privatekey' => $this->privateKey,
