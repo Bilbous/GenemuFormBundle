@@ -60,7 +60,7 @@ class ReCaptchaValidator implements FormValidatorInterface
     {
         $error = '';
         $request = $this->request->request;
-        $request = $this->request->get('request');
+        $server = $this->request->server;
 
         $datas = array(
             'privatekey' => $this->privateKey,
